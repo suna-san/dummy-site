@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">  <meta charset="UTF-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta discription="個人で引用するサイトの詳細を差し替えたクローンサイトです。">
+  <!-- <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:title" content=""> -->
+  <title>sample-ex</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/ex.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+JP" rel="stylesheet">
+  <!-- <script src="js/main.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-burger-menu@2.0.3/dist/vue-burger-menu.umd.js"></script>
+  <script src="js/ex.js"></script>
+  <script src="../common/js/component.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'qua5vwq',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script>GAは割愛します。</script> -->
+
+</head>
+<body>
+
+<div id="ex">  
+
+  <header-component></header-component>
+  <sns-component></sns-component>
+
+  <div class="main-area">
+
+        <div class="content__mv">
+          <div class="content__title">
+            <span>Content</span> 
+            <h2>情報ページ</h2>
+          </div>
+        </div>
+
+        <div class="content-area__outer">
+
+          <fade-in-component>
+            <div class="content-area__inner">
+              <div class="content__text-block">
+                <p>このページでは趣味に関連する情報を掲載しています。<br>概要やリンクなどをまとめ更新しています。</p>
+                <p>外部流入はこちらのページがやや多めです。</p>
+              </div>
+              <div class="content__text-block">
+                <ul class="ex__list">
+                  <li>不定期更新</li>
+                  <li>「新着」はclassで切り替えています。いまのところjsなどは使わず、手動更新です。</li>
+                </ul>
+              </div>
+            </div>
+          </fade-in-component>
+        </div>
+
+        <div class="ex__area">
+          <div class="ex__inner">
+
+            <fade-in-component class="ex__title-block">
+              <h3><span class="under-gray">関連情報</span></h3> 
+              <p class="ex__dates">{{ exDates }}</p>
+            </fade-in-component>
+
+            <div class="ex__container">
+
+              <fade-in-component class="ex__item new">
+                <a href="#" target="_blank">
+                <div class="ex__item__box">
+                  <div class="ex__item__box__top">
+                    <h4>情報に関するタイトル</h4>
+                  </div>
+                  <div class="ex__item__box__bottom">
+                    <ul>
+                      <li>このエリアに情報を掲載しています。</li>
+                      <li>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+                    </ul>
+                  </div>
+                  <ul class="ex__tag-item">
+                    <li>{{ tagEx }}</li>
+                  </ul>
+                </div>
+                </a>
+              </fade-in-component>
+  
+              <fade-in-component class="ex__item new">
+                <a href="#" target="_blank">
+                <div class="ex__item__box">
+                  <div class="ex__item__box__top">
+                    <h4>情報に関するタイトル</h4>
+                  </div>
+                  <div class="ex__item__box__bottom">
+                    <ul>
+                      <li>このエリアに情報を掲載しています。</li>
+                      <li>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+                    </ul>
+                  </div>
+                  <ul class="ex__tag-item">
+                    <li>{{ tagEx }}</li>
+                  </ul>
+                </div>
+                </a>
+              </fade-in-component>
+
+              <fade-in-component class="ex__item new">
+                <a href="#" target="_blank">
+                <div class="ex__item__box">
+                  <div class="ex__item__box__top">
+                    <h4>情報に関するタイトル</h4>
+                  </div>
+                  <div class="ex__item__box__bottom">
+                    <ul>
+                      <li>このエリアに情報を掲載しています。</li>
+                      <li>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+                    </ul>
+                  </div>
+                  <ul class="ex__tag-item">
+                    <li>{{ tagEx }}</li>
+                  </ul>
+                </div>
+                </a>
+              </fade-in-component>
+
+              <fade-in-component class="ex__item new">
+                <a href="#" target="_blank">
+                <div class="ex__item__box">
+                  <div class="ex__item__box__top">
+                    <h4>情報に関するタイトル</h4>
+                  </div>
+                  <div class="ex__item__box__bottom">
+                    <ul>
+                      <li>このエリアに情報を掲載しています。</li>
+                      <li>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</li>
+                    </ul>
+                  </div>
+                  <ul class="ex__tag-item">
+                    <li>{{ tagEx }}</li>
+                  </ul>
+                </div>
+                </a>
+              </fade-in-component>
+          
+           </div>
+         </div>
+        </div>
+    </div>
+
+  <movetop-component class="scrBtn"></movetop-component>
+  <footer-component></footer-component>
+
+</div>
+</body>
+</html>

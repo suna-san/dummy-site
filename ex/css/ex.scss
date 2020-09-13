@@ -1,0 +1,237 @@
+$pc: 768px;  // PC
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+$sp: 767px;  // SP
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+h1 {
+    margin-left: 0!important;
+}
+.main-area {
+    position: relative;
+}
+.kv-area {
+    width: 100%;
+    img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+.content {
+    &__mv {
+        width: 100%;
+        height: 400px;
+        background: url(../img/mv_ex.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__title {
+        width: 100%;
+        position: absolute;
+        top: 10%;
+        margin: 0;
+        filter: drop-shadow(1px 1px 2px #222);
+        h2 {
+            color: #fff;
+        }
+        span {
+            color: transparent;
+            -webkit-text-stroke-color: #fff;
+            -webkit-text-stroke-width: 1px;
+        }
+        @include sp {
+            top: 7%;
+            h2,span {
+                font-size: 2.1rem;
+            }
+        }
+    }
+    &__sub-title {
+        h3 {
+            font-size: 1.6rem;
+        }
+    }
+    &__block {
+        margin-bottom: 80px;
+    }
+}
+
+.new,.end {
+    position:relative;
+    display:block;
+    width:240px;
+    height:144px;
+    margin:40px;
+    overflow:visible;
+    &:before, &:after{
+        display: block;
+        position: absolute;
+        right: -8px;
+        z-index: 10;
+    }
+    &:before{
+        content: "";
+        border: 4px solid transparent;
+        top: 14px;
+    }
+    &:after{
+        font-weight: bold;
+        font-family: 'Helvetica', 'sans-serif';
+        color: #fff;
+        height: 24px;
+        line-height: 24px;
+        top: -10px;
+        font-size: .8rem;
+    }
+}
+
+.new {
+    &:before{
+        border-top-color: #4686F2;
+        border-left-color: #4686F2;
+    }
+    &:after{
+        content: "新着";
+        background: #4686F2;
+        padding: 0 6px 0 14px;
+        letter-spacing: 0.25rem;
+    }
+}
+
+.end {
+    &:before{
+        border-top-color: #FF1A1A;
+        border-left-color: #FF1A1A;
+    }
+    &:after{
+        content: "終了直前";
+        background: #FF1A1A;
+        padding: 0 6px 0 10px;
+        letter-spacing: 0.15rem;
+    }
+}
+
+
+.ex {
+    &__area {
+        background: #fafafa;
+        h3 {
+            font-size: 2rem;
+            padding-top: 2rem;
+        }
+    }
+    &__list {
+        li {
+            font-size: .8rem;
+            list-style-type: square;
+            margin-left: 1.3rem;
+            margin-bottom: .3rem;
+            color: #808080;
+        }
+    }
+    &__title-block {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    &__inner {
+        padding: 2rem;
+    }
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    &__item {
+        width: calc(100% / 4 - 15px);
+        min-width: 200px;
+        height: auto;
+        margin: 0 .5rem 1rem 0;
+        padding: 0.2rem;
+        background: #fff;
+        box-shadow: 2px 2px 5px #e6e6e6;
+        word-break: break-all;
+        position: relative;
+        // &:nth-child(even) {
+        //     margin-right: 0;
+        // }
+        h4 {
+            font-size: .9rem;
+            line-height: 1.5;
+            margin-bottom: .5rem;
+            word-break:break-word; 
+        }
+        p,li {
+            font-size: .75rem;
+        }
+        &__img {
+            overflow: hidden;
+            position: relative;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+                transition: .2s ease-in;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &__box {
+            padding: 1rem;
+            &__top {
+                margin-bottom: 2rem;
+                padding: 1rem 0;
+                border-bottom: 2px solid #e7e7e7;
+                min-height: 70px;
+                @include sp {
+                    min-height: 0;
+                }
+            }
+            &__bottom {
+                margin-bottom: 1.2rem;
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+    &__tag-item {
+        display: block;
+        li {
+            margin-bottom: 0.5rem;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 10px;
+            border: 1px solid #999;
+            color: #999;
+            text-align: center;
+        }
+    }
+    &__dates {
+        text-align: center;
+    }
+    @include sp {
+        &__inner {
+            padding: 1rem;
+        }
+        &__item {
+            display: flex;
+            margin: 0 auto 1rem;
+            width: 100%;
+            a {
+                display: flex;
+            }
+            h4 {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

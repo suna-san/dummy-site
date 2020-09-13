@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">  <meta charset="UTF-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta discription="個人で引用するサイトの詳細を差し替えたクローンサイトです。">
+    <!-- <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content=""> -->
+    <title>sample-event</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/event.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+JP" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-burger-menu@2.0.3/dist/vue-burger-menu.umd.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src=".././../common/js/component.js"></script>
+  <!-- <script>GAは割愛します。</script> -->
+</head>
+<body>
+
+<div id="app">
+  <header-component></header-component>
+  <sns-component></sns-component>
+
+  <div class="main-area">
+     
+    <div class="content__mv">
+      <div class="content__title">
+        <span>Content</span>
+        <h2>イベント</h2>
+      </div>
+    </div>
+
+    <div class="content-area__outer">
+
+      <div class="content__block">
+        <fade-in-component>
+          <div class="content__sub-title">
+            <h3><span class="under-gray">次回イベントのお知らせ</span></h3>
+          </div>
+        </fade-in-component>  
+
+        <fade-in-component class="content__event-img">
+          <img src="../../img/event_img03.jpg" alt=""　loading="lazy">
+        </fade-in-component>
+
+        <fade-in-component class="content__event-title">
+          <div class="content__event-title__block">
+            <h3>{{ eventVolOn }}</h3>
+            <p class="bold">{{ eventTitle }}</p>
+            <p>開催日:{{ eventDateOn }}</p>
+          </div>
+        </fade-in-component>
+      
+        <fade-in-component class="content__text-block">
+          <p><span class="bold">こちらに概要などを記載します。</p>
+        </fade-in-component>  
+
+        <fade-in-component class="content__text-block">
+          <p>詳細はnoteに記載。リンクを貼っています。<br>※このサイトではダミーです</p>
+          <div class="content__button">
+            <button tabindex="0" role="button" onclick="window.open('#','_blank')">
+                noteで詳細をみる
+            </button>
+          </div>
+        </fade-in-component>
+      </div>
+    
+      <div class="content__block">
+        <fade-in-component id="form" class="bg-grey">
+          <div class="content__sub-title">
+            <h4><span class="under-gray">お申込み</span></h4>
+          </div>
+          <div class="content__text-block">
+            <p>お申し込み用に以下フォームへのリンクを作成しています。</p>
+            <p>※Google フォームにリンクします。<br>※このサイトではダミーです</p>
+            <div class="content__button">
+              <button tabindex="0" role="button" onclick="window.open('#')">
+                  ご参加はこちらから
+              </button>
+            </div>
+          </div>
+        </fade-in-component>     
+      </div>
+
+      <div class="content__block">
+        <fade-in-component>
+          <div class="content__text-block">
+            <p><span class="bold">開催報告はnoteに記載しています。<br>※このサイトではダミーです</span></p>
+            <div class="content__link">
+              <a href="#" target="_blank">開催報告(note)をみる</a>
+            </div>
+          </div>
+        </fade-in-component>
+      </div>
+
+  </div>
+  <movetop-component class="scrBtn"></movetop-component>
+  <footer-component></footer-component>
+
+</div>
+</body>
+</html>

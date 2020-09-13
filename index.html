@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">  <meta charset="UTF-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta discription="個人で引用するサイトの詳細を差し替えたクローンサイトです。">
+  <!-- <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:title" content=""> -->
+  <title>sample-top</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+JP" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-burger-menu@2.0.3/dist/vue-burger-menu.umd.js"></script>
+  <script src="js/main.js"></script>
+  <script src="common/js/component.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'qua5vwq',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D12QGBC69P"></script>
+   <!-- <script>GAは割愛します。</script> -->
+</head>
+<body>
+
+<div id="app">
+  <header-component></header-component>
+  <sns-component></sns-component>
+
+  <div class="slider-outer">
+    <transition name="fade">
+      <div class="slider-inner" :key="idx" v-for="(slide, idx) in slides" v-if="current_slide == idx">
+        <img class="slide-img" v-bind:src="slides[idx].img" :key="slides[idx].img" width="100" height="100">
+      </div>
+    </transition>
+  </div>
+
+  <div id="anker-link">
+    <!-- <slide class="sp"> -->
+    <ul>
+      <li>
+        <a href="#ContentA">
+          <span>Content A</span>
+        </a>
+      </li>
+      <li>
+        <a href="#ContentB">
+          <span>Content B</span>
+        </a>
+      </li>
+      <li>
+        <a href="#ContentC">
+          <span>Content C</span>
+        </a>
+      </li>
+    </ul>
+  <!-- <slide> -->
+  </div>
+
+  <sns-component></sns-component>
+
+  <div class="main-area">
+    <section class="content-area">
+
+      <div class="content-area__outer" id="ContentA">        
+        <fade-in-component> 
+          <div class="content__title">
+            <span>Content A</span>
+            <h2>このサイトについて</h2>
+          </div>
+        </fade-in-component>
+
+        <div class="about-content content__block">
+          <div class="content__text-block">
+            <fade-in-component>
+              <p><span class="bold">サイト概要</span><br>個人的な趣味の一環として運用中のサイトからソースを流用したダミーサイトです。<span class="under">ポートフォリオの代わりとして作成しました。</span><br>文言や画像、ディレクトリ名などを変更しています。外部リンクはダミー、サイト内リンクは遷移可能です。</p>
+            </fade-in-component>       
+            <fade-in-component>
+              <p><span class="bold">CSSについて</span><br>CSSはそのまま踏襲しています。数点必要な記述を追加しています。またClass名は一部変更しています。</p>
+            </fade-in-component>       
+            <fade-in-component>
+              <p><span class="bold">レイアウトについて</span><br>このエリアはPCとSPでレイアウトが変わるように組んでいます。<br>ページ内のアンカーリンクも幅によってレイアウトが変わります(PCはサイドエリア、SPはKVスライダーの下部)</p>
+            </fade-in-component>            
+          </div>
+          
+          <fade-in-component>
+            <div class="content__image-container">
+              <img src="img/content_img_01.jpg" alt="イメージ画像" loading="lazy">
+              <img src="img/content_img_02.jpg" alt="イメージ画像" loading="lazy">
+            </div>
+          </fade-in-component>
+        </div>
+
+      </div>
+    </section>
+
+    <fade-in-component class="content-area">
+      <div class="content-area__outer bg-grey content__block" id="ContentB">
+        <fade-in-component> 
+          <div class="content__title">
+            <span>Content B</span>
+            <h2>概要</h2>
+          </div>
+        </fade-in-component>
+
+        <div class="content__text-block fadeIn">
+          <p>このサイトについての簡単な説明です。</p>
+        </div>
+
+        <fade-in-component  class="content__eplanation-block">
+          <p><span class="bold">概要</span></p>
+          <div class="eplanation__list">
+            <ul>
+              <li>趣味の集まり、情報のハブ</li>
+              <li>活動はおおよそ月一回</li>
+              <li>情報発信については不定期（関連情報の掲載）</li>
+            </ul>
+          </div>
+          <p><span class="bold">アクセスについて</span></p>
+          <div class="eplanation__list">
+            <ul>
+              <li>大半はTwitter、Instagramより流入</li>
+              <li>外部検索からも一部あり</li>
+            </ul>
+          </div>
+        </fade-in-component>
+
+        <fade-in-component  class="content__eplanation-block">
+          <p><span class="bold">着手している内容</span></p>
+          <p>運用にあたって以下を行っています。</p>
+          <div class="eplanation__list">
+            <ul>
+              <li>サイト運用・更新</li>
+              <li>SNS運用・更新</li>
+              <li>イベント企画立案・実施</li>
+              <li>告知、ページ内で使用するデザインの作成</li>
+              <li>簡単なアクセス解析</li>
+              <li>連絡窓口</li>
+            </ul>
+          </div>
+        </fade-in-component>
+
+        <fade-in-component  class="content__eplanation-block">
+          <p><span class="bold">サイト構成について</span></p>
+          <p>本サイトは以下の構成となっております。</p>
+          <div class="eplanation__list">
+            <p>●トップページ</p>
+            <p>●情報ページ⇒下層ページ</p>
+            <p>●イベントページ⇒下層ページ</p>
+          </div>
+        </fade-in-component>
+
+        <fade-in-component  class="content__eplanation-block">
+          <p><span class="bold">技術策定について</span></p>
+           <p>当初はトップの1ページのみであったため<span class="under-gray">jQuery</span>を使用していましたが、サイトの拡大を検討し<span class="under-gray">Vue.js</span>を採用しました。</p>
+           <p>共通パーツはjsファイルからコンポーネント化したファイルなどを読み込んでいます。</p>
+           <p>現時点では不要ですが、今後規模が拡大した場合はSFC（単一ファイルコンポーネント）化も検討中です。</p>
+          <div class="eplanation__list">
+            <p>共通パーツ、効果</p>
+            <ul>
+              <li>ヘッダー・フッター・SNSエリア(ページ最下部)</li>
+              <li>フェードインの効果</li>
+              <li>ページトップへの遷移ボタン(画面右下)</li>
+            </ul>
+          </div>
+
+          <div class="eplanation__list">
+            <p>JSファイル内にdataを持たせて変更</p>
+            <ul>
+              <li>イベントなどに関する日付や詳細</li>
+              <li>情報分類のタグ</li>
+            </ul>
+          </div>
+
+          <div class="eplanation__list">
+            <p>ライブラリの使用</p>
+            <ul>
+              <li>ハンバーガーメニュー</li>
+            </ul>
+          </div>
+        </fade-in-component>
+
+        <fade-in-component  class="content__eplanation-block">
+          <p><span class="bold">その他ツール等</span></p>
+          <p>運用にあたって以下を使用、記述しています。</p>
+          <div class="eplanation__list">
+            <ul>
+              <li>Google Analytics</li>
+              <li>Twitter OGP</li>
+            </ul>
+          </div>
+        </fade-in-component>
+
+      </div>
+    </fade-in-component>
+
+    <fade-in-component class="content-area">
+
+      <div id="ContentC">
+
+        <fade-in-component> 
+          <div class="content__title">
+            <span>Content C</span>
+            <h2>イベント</h2>
+          </div>
+        </fade-in-component>
+
+        <div class="content__block">
+          <fade-in-component class="content__event-img">
+            <img src="img/event_img03.jpg">
+          </fade-in-component>
+            
+          <fade-in-component class="content__text-block">
+            <p>イベントなどを開催する場合の申し込みです。</p>
+            <p>ページ内にフォームは作成していないので、Googleアンケートで作成し外部リンクにしています。<br>見出し下に表示する画像はInstagramでの告知に使用する画像であり、比率を変えてTwitter、note用の計3パターンを毎月作成しています。</p>
+            <div class="content__button">
+              <button tabindex="0" role="button" onclick="window.open('https://suna-san.github.io/dummy-site/event/2020/xx.html','_blank')">
+                 詳細をみる
+              </button>
+            </div>
+          </fade-in-component>
+        </div>
+      </div>
+
+    </fade-in-component>
+
+    <fade-in-component class="content-area">
+      <div class="content-area__outer bg-grey content__block" >
+
+        <fade-in-component class="content__text-block">
+          <p>関連する情報を掲載するページをサイト内に作っています。不定期に管理・更新を行っています。</p>
+          <div class="content__button">
+            <button tabindex="0" role="button" onclick="window.open('#')">
+               情報掲載ページへ
+            </button>
+          </div>
+        </fade-in-component>
+
+      </div>
+    </fade-in-component>
+
+  </div>
+  <movetop-component class="scrBtn"></movetop-component>
+  <footer-component></footer-component>
+
+</div>
+</body>
+</html>
